@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_API_BASE || '/api/v1';
+const BASE = import.meta.env.VITE_API_BASE || 'https://medi-track-app-m33h.vercel.app/api/v1';
 
 export class ApiError extends Error {
   constructor(message, { status, code, details } = {}) {
