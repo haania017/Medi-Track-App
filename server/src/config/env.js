@@ -38,7 +38,10 @@ export const config = {
   cookieSecure: toBool(process.env.COOKIE_SECURE, isProd),
   cookieSameSite: process.env.COOKIE_SAME_SITE || 'lax',
 
-  uploadDir: path.resolve(serverRoot, process.env.UPLOAD_DIR || './storage/uploads'),
+  uploadDir: path.resolve(
+    serverRoot,
+    process.env.UPLOAD_DIR || (process.env.VERCEL ? '/tmp/meditrack-uploads' : './storage/uploads'),
+  ),
   maxUploadBytes: toInt(process.env.MAX_UPLOAD_MB, 10) * 1024 * 1024,
   storageDriver: process.env.STORAGE_DRIVER || 'local',
   s3: {
