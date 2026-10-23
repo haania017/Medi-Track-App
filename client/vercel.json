@@ -5,8 +5,9 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+      "source": "/api/:path*",
+      "destination": "https://medi-track-app-b7ig.onrender.com/api/:path*"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
