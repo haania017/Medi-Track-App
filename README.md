@@ -145,6 +145,9 @@ MediTrack/
 
 ---
 
+> Note: server/.env.example is git-ignored and is **not** part of the repository - the tree above
+> shows the working copy only. Create server/.env yourself (see Environment variables).
+
 ## Prerequisites
 
 - **Node.js 18 or newer** — `node -v`
@@ -170,8 +173,12 @@ cd MediTrack
 npm install
 
 # 3. create the server environment file
-cp server/.env.example server/.env
-#    Windows (cmd):      copy server\.env.example server\.env
+#    create server/.env yourself (it is git-ignored) with at least:
+#      NODE_ENV=development
+#      PORT=5000
+#      CLIENT_ORIGIN=http://localhost:5173
+#      JWT_SECRET=<any long random string>
+#      MONGODB_URI=               # empty = in-memory MongoDB in development
 
 # 4. (optional) create the client environment file
 cp client/.env.example client/.env
@@ -193,7 +200,7 @@ npm run dev
 **Only what you need locally is nothing at all** — the defaults boot a working development
 setup. Configure the rest as you deploy.
 
-### Server — `server/.env` (template: `server/.env.example`)
+### Server — `server/.env` (git-ignored - create it yourself)
 
 | Variable | Example / default | Required | Notes |
 | --- | --- | --- | --- |
